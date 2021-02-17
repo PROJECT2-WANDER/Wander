@@ -1,6 +1,11 @@
 <h1>Details</h1>
 <div>{{place.name}}</div>
 
+<a href="/favoritesPlaces/{{place._id}}/edit">Edit this place</a>
+
+<form action="/favoritesPlaces/{{place._id }}/delete" method="POST">
+<button type="submit">Delete</button> </form>
+
  {{!-- <form action="/favoritesPlaces/{{ this._id }}/delete" method="POST">
   <button type="submit">Delete</button>
   </form>  --}}

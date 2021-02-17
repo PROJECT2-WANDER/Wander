@@ -9,7 +9,7 @@ router.post('/addPlace', (req,res,next) => {
   const {name, coordinates} = req.body; 
   Place.create({ name, coordinates, user: req.session.user._id})
   .then(() => {
-    res.redirect('/');
+    res.redirect('/favoritesPlaces');
   })
   .catch(err => {
     
@@ -21,13 +21,34 @@ router.post('/addPlace', (req,res,next) => {
 router.get('/favoritesPlaces', (req,res,next) => {
   console.log("USER PLEASE BE HERE",req.session.user._id)
   Place.find({ user: req.session.user._id}).then(places => {
-    console.log(places)
+    console.log("HERE ARE THE PLACES", places)
+    // places.forEach((place) => {
+    //   newMarker(place.coordinates)
+    // })
+    // })
     res.render('user/placeList', {places});
   })
   .catch(err => {
     next(err);
-  });
-});
+  })
+})
+
+
+router.get('/api/favoritesPlaces', (req,res,next) => {
+  console.log("USER PLEASE BE HERE",req.session.user._id)
+  Place.find({ user: req.session.user._id}).then(places => {
+    console.log("HERE ARE THE PLACES", places)
+    // places.forEach((place) => {
+    //   newMarker(place.coordinates)
+    // })
+    // })
+    res.json({data : places});
+  })
+  .catch(err => {
+    next(err);
+  })
+})
+
 
 // //GET to a specific place 
  router.get("/favoritesPlaces/:id", (req,res, next) => {

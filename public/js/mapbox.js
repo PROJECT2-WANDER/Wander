@@ -65,13 +65,61 @@ map.on('load', function() {
     document.querySelector('#saveLocation').onclick = function (){
       console.log(long, lat) 
       axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: e.result.text} )
-      .then(response => console.log(response))
+      .then(response => {
+        showMarkers(); 
+      })
+
       .catch(err => console.log(err))
     }
 
 
   });
 });
+
+
+
+
+function showMarkers(){
+  axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
+  const places = response.data.data; 
+  places.forEach(place => {
+    new mapboxgl.Marker({
+      scale: 1,
+      color: 'red',
+  })
+      .setLngLat(place.coordinates)
+      .addTo(map)
+      .on('dragend', (data) => {
+          console.log(data);
+      })
+  })
+})
+}
+
+showMarkers(); 
+
+//let coords = {coordinates: [long, lat]}; 
+
+// coords.forEach(coord => {
+//   new mapboxgl.Marker({
+//       scale: 1,
+//       color: 'red',
+//       draggable: true
+//   })
+//       .setLngLat(coord)
+//       .addTo(map)
+//       .on('dragend', (data) => {
+//           console.log(data);
+//       })
+// })
+
+
+
+
+
+
+
+
 
 
   

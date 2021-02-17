@@ -1,0 +1,15 @@
+<h1>Edit this book</h1>
+<div>{{place.name}}</div>
+{{#with place}}
+<form action="/favoritesPlaces/{{_id}}/edit" method="POST">
+  <label for="description">description: </label>
+  <input type="description" name="description" id="description" value="{{description}}">
+
+  <label for="rating">Rating: </label>
+  <input type="number" name="rating" id="rating" value="{{rating}}">
+
+  <button type="submit">Update the place</button>
+</form>
+{{/with}}
+
+<button type="submit">Delete</button>

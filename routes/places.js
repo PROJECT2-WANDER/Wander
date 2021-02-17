@@ -36,22 +36,6 @@ router.get('/favoritesPlaces', (req,res,next) => {
   });
 });
 
-
-//Delete a place 
-router.post('/favoritePlaces/:id/delete', (req, res, next) => {
-  Celebrity.findOneAndDelete({ _id : req.params.id })
-    .then(() => {
-      console.log('DELETEDDDDDDD')
-      res.redirect('favoritePlaces');
-    })
-    .catch(err => {
-      next(err);
-    })
-});
-
-
-
-
 // //GET to a specific place 
  router.get("/favoritesPlaces/:id", (req,res, next) => {
   const placeId = req.params.id; 
@@ -63,6 +47,63 @@ router.post('/favoritePlaces/:id/delete', (req, res, next) => {
     })
  });
 
+
+//Delete a place 
+// router.post('/favoritesPlaces/:id/delete', (req, res, next) => {
+//   const placeId = req.params.id; 
+//   Place.findByIdAndDelete(placeId)
+//   console.log('WOORK DELETEDDDDDDD')
+//     .then(() => {
+//       console.log('DELETEDDDDDDD')
+//       res.redirect('/favoritesPlaces');
+//     })
+//     .catch(err => {
+//       next(err);
+//     })
+// });
+
+
+router.post('/favoritesPlaces/:id/delete', (req, res,next) => {
+  const placeId = req.params.id; 
+  console.log('HEEEEEEERE', placeId)
+ Place.findByIdAndDelete(placeId)
+   .then(()=> {
+     console.log('DELETEDDDDDDD')
+      res.redirect('/favoritesPlaces')
+    })
+    .catch(err => {
+       next(err);
+   })
+   })
+
+
+
+ // GET edit 
+ router.get('/favoritesPlaces/:id/edit', (req, res) => {
+  const placeId = req.params.id;
+  console.log('THAT WORK!!!!!!!');
+  Place.findById(placeId)
+    .then(placeFromDB => {
+      console.log(placeFromDB);
+      res.render('user/placeEdit.hbs', { place: placeFromDB });
+    })
+})
+
+// POST edit 
+router.post('/favoritesPlaces/:id/edit', (req, res) => {
+  const placeId = req.params.id;
+  const { description, rating } = req.body; 
+  Place.findByIdAndUpdate(placeId, {
+    description: description,
+    rating: rating
+  })
+    .then(place => {
+      res.redirect(`/favoritesPlaces/${book._id}`);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
 
 
 

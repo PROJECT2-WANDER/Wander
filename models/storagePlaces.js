@@ -7,6 +7,8 @@ const placeSchema = new Schema({
     ref: 'User'
   }, 
     name: String, 
+    address: String, 
+    category: String, 
     coordinates:[Number],
     description: String, 
     rating: Number,

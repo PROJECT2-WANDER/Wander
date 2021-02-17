@@ -21,13 +21,13 @@ router.get("/", (req, res, next) => {
 
 
 /*GET*/
-router.get("/add", (req, res, next) => {
-  res.render("user/placeAdd.hbs");
+router.get("/homepage", (req, res, next) => {
+  res.render("user/homePage.hbs");
 });
 
 // protected route - can only be accessed by a logged in user
 router.get('/profile', loginCheck(), (req, res) => {
-  res.render('index');
+  res.render('user/homePage');
 })
 
 

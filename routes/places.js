@@ -6,8 +6,8 @@ const Place = require('../models/storagePlaces');
 
 
 router.post('/addPlace', (req,res,next) => {
-  const {name, coordinates} = req.body; 
-  Place.create({ name, coordinates, user: req.session.user._id})
+  const {name, coordinates, address, category} = req.body; 
+  Place.create({ name, coordinates, address, category, user: req.session.user._id})
   .then(() => {
     res.redirect('/favoritesPlaces');
   })
@@ -92,10 +92,12 @@ router.post('/favoritesPlaces/:id/delete', (req, res,next) => {
 // POST edit 
 router.post('/favoritesPlaces/:id/edit', (req, res) => {
   const placeId = req.params.id;
-  const { description, rating } = req.body; 
+  const {description, rating, tag } = req.body; 
   Place.findByIdAndUpdate(placeId, {
     description: description,
+    tag: tag,
     rating: rating
+    
   })
     .then(place => {
       console.log(place)

@@ -62,9 +62,12 @@ map.on('load', function() {
 
     const long = e.result.geometry.coordinates[0];
     const lat = e.result.geometry.coordinates[1]; 
+    const name = e.result.text; 
+    const address = e.result.place_name; 
+    const category = e.result.properties.category; 
     document.querySelector('#saveLocation').onclick = function (){
       console.log(long, lat) 
-      axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: e.result.text} )
+      axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: name, address: address, category: category} )
       .then(response => {
         showMarkers(); 
       })

@@ -1,7 +1,7 @@
 /*Map */ 
 #map {
   /*position: absolute; */
-   position: absolute;  
+ position: absolute;
    top: 0;
    bottom: 0;
    width:100%;
@@ -164,6 +164,27 @@ label #cancel{
   
 }
 
+.card-scrollbar {
+  background: #2c3a47;
+  height:430px;
+  padding: 20px;
+
+}
+
+/* scrollbar need to be fixed 
+.card-scrollbar::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.card-scrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.card-scrollbar::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+*/
 .pic{
 
   display: inline-block;

@@ -1,5 +1,6 @@
 
 
+
 <!--<h1>List of your favorite place</h1>
 {{#each places}}
 <a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
@@ -80,19 +81,11 @@
 
 
 
--->
-  
 
 
 <section class="flexbox nav ">
-
-
-<a href="/logout">Logout</a>
- 
-   <a href="/" class=> back to landingpage</a>
    <h2 class="logo">Wander</h2>
 
- 
  <section class="flexbox ">
     <input type="checkbox" id="check">
     <label for="check">
@@ -108,8 +101,8 @@
           <button id="saveLocation" >Save location</button></a>
            </div>
     <div class="profile-card">
-      <div class="card-header">
-        <div class="name"> Welcome Lila</div>
+      <div class="card-scrollbar">
+        <div class="name"> your list </div>
         {{#each places}}
 <a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
 <p>{{address}}</p>
@@ -118,19 +111,21 @@
 </form> 
 {{/each}}
 
-  <a href="/" class=> back</a>
+ </div>
+      <div class="card-footer">
+        <div class="numbers">     
+          <div class="border"></div>  
+          <div class="border"></div>
+  <a href="/" class=> go back</a>
+          </div>
+        </div>
+      
+  
+
 
 
 
      </div>
-      
-
-      <!--
-      <div class="card-footer ">
-        
-      </div>
-    </div>
--->
    
    </section>
 

@@ -1,91 +1,5 @@
-
-
-
-<!--<h1>List of your favorite place</h1>
-{{#each places}}
-<a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
-
-</form> 
-{{/each}}
-
-<form action="/favoritesPlaces/filter" method="POST">
-<label for="tag">Filter form:</label>
-  <select name="tag" id="tag">
-    <option selected> Choose...</option>
-    <option value="Food">Food</option>
-    <option value="Bar">Bar</option>
-    <option value="Park">Park</opption>
-    <option value="Sports">Sports</option>
-    <option value="Culture">Culture</option>
-    <option value="Club">Club, Party!!!</option>
-  </select>
-  <button type="submit">Filter</button>
-</form>
-<a href="/favoritesPlaces">No filter </a>>
-<button id="saveLocation">Save location</button>
-
-<div id='map'>
-         <button id="saveLocation">Save location</button>
-  </div>
-
-<a href="/logout">Logout</a>
- <a href="/favoritesPlaces" >
-  <button id="saveLocation" >Save location</button></a>
-   <a href="/" class=> back to landingpage</a>
-   <h2 class="logo">Wander</h2>
-
- -->
-
- <!--
- <section class="flexbox ">
-    <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fa fa-bars" aria-hidden="true" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-    <header>Save your Place      
-    </header>
-        <div class ="search-bar ">
-             <div id="geocoder" class="geocoder"></div>
-          <a href="/favoritesPlaces" >
-          <button id="saveLocation" >Save location</button></a>
-           </div>
-
-
-
-
-
-
-
-        <div class = 'favorite-place-list'> 
-
-
- {{#each places}}
-<a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
-<p>{{address}}</p>
-{{!-- <form action="/favoritesPlaces/{{ this._id }}/delete" method="POST">
-<button type="submit">Delete</button> --}}
-</form> 
-{{/each}}
-
-  <a href="/" class=> back</a>
-
-  </div>
-    
-
-   
-   </section>
-
-
-
-
-
-
-
 <section class="flexbox nav ">
    <h2 class="logo">Wander</h2>
-
  <section class="flexbox ">
     <input type="checkbox" id="check">
     <label for="check">
@@ -103,14 +17,23 @@
     <div class="profile-card">
       <div class="card-scrollbar">
         <div class="name"> your list </div>
-        {{#each places}}
+       {{#each places}}
 <a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
-<p>{{address}}</p>
-{{!-- <form action="/favoritesPlaces/{{ this._id }}/delete" method="POST">
-<button type="submit">Delete</button> --}}
 </form> 
 {{/each}}
-
+<form action="/favoritesPlaces/filter" method="POST">
+<label for="tag">Filter form:</label>
+  <select name="tag" id="tag">
+    <option selected> Choose...</option>
+    <option value="Food">Food</option>
+    <option value="Bar">Bar</option>
+    <option value="Park">Park</option>
+    <option value="Sports">Sports</option>
+    <option value="Culture">Culture</option>
+    <option value="Club">Club, Party!!!</option>
+  </select>
+  <button type="submit">Filter</button>
+</form>
  </div>
       <div class="card-footer">
         <div class="numbers">     
@@ -119,16 +42,6 @@
   <a href="/" class=> go back</a>
           </div>
         </div>
-      
-  
-
-
-
-
-     </div>
-   
+     </div> 
    </section>
-
      </section>
-  
-  

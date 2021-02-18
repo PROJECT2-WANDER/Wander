@@ -97,13 +97,18 @@ map.on('load', function() {
 
 
 function showMarkers(){
+  console.log('SHOW MARKERS'); 
   axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
   const places = response.data.data; 
+  let color = 'red'; 
   console.log(places); 
   places.forEach(place => {
+    if (place.tag === 'Food') {
+      color = 'blue'
+    }
     new mapboxgl.Marker({
       scale: 1,
-      color: 'red',
+      color: color,
   })
       .setLngLat(place.coordinates)
       .addTo(map)
@@ -117,8 +122,30 @@ function showMarkers(){
 showMarkers(); 
 
 
+// function showPopUp (){
+//   axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
+//   const places = response.data.data; 
+//   places.forEach(place => {
+//     new mapboxgl.Popup({
+//          closeButton: true
+//        });
+//       popup.setLngLat(place.coordinates)
+//          .setHTML('<h1>Hello World</h1>')
+//       //   .setMaxWidth('400px')
+//       //   .addTo(map)
+
+//   })
+
+// }
 //to uptade the markers with the tag
 //
+// const popup = new mapboxgl.Popup({
+//   closeButton: true
+// });
+// popup.setLngLat([13.405, 52.52])
+//   .setHTML('<h1>Hello World</h1>')
+//   .setMaxWidth('400px')
+//   .addTo(map)
 
 
 

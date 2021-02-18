@@ -1,18 +1,28 @@
 <h1>Details</h1>
-<div>{{place.name}}</div>
+<h2>{{place.name}}</h2>
+<p>{{place.address}}</p>
+<p>{{place.category}}</p>
 <p>{{place.description}}</p>
+<p>{{place.tag}}</p>
 <p>{{place.rating}}</p>
+
 
  <a href="/favoritesPlaces" >
   <button id="saveLocation" >Save location</button></a>
 
+
+<a href="/favoritesPlaces/{{place._id}}/edit">Edit this place</a>
+
+
 <form action="/favoritesPlaces/{{place._id }}/delete" method="POST">
 <button type="submit">Delete</button> </form>
 
- {{!-- <form action="/favoritesPlaces/{{ this._id }}/delete" method="POST">
-  <button type="submit">Delete</button>
-  </form>  --}}
+
+ 
+
+ <!-- <div id='map'>
+  </div> -->
 
 
-  <div id='map'>
-  </div>
+<a href="/favoritesPlaces">Go to back to the list</a>
+

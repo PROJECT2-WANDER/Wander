@@ -70,9 +70,12 @@ map.on('load', function() {
 
     const long = e.result.geometry.coordinates[0];
     const lat = e.result.geometry.coordinates[1]; 
+    const name = e.result.text; 
+    const address = e.result.place_name; 
+    const category = e.result.properties.category; 
     document.querySelector('#saveLocation').onclick = function (){
       console.log(long, lat) 
-      axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: e.result.text} )
+      axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: name, address: address, category: category} )
       .then(response => {
         showMarkers(); 
       })
@@ -90,6 +93,7 @@ map.on('load', function() {
 function showMarkers(){
   axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
   const places = response.data.data; 
+  console.log(places); 
   places.forEach(place => {
     new mapboxgl.Marker({
       scale: 1,
@@ -106,21 +110,9 @@ function showMarkers(){
 
 showMarkers(); 
 
-//let coords = {coordinates: [long, lat]}; 
 
-// coords.forEach(coord => {
-//   new mapboxgl.Marker({
-//       scale: 1,
-//       color: 'red',
-//       draggable: true
-//   })
-//       .setLngLat(coord)
-//       .addTo(map)
-//       .on('dragend', (data) => {
-//           console.log(data);
-//       })
-// })
-
+//to uptade the markers with the tag
+//
 
 
 

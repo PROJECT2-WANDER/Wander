@@ -7,9 +7,18 @@ const placeSchema = new Schema({
     ref: 'User'
   }, 
     name: String, 
+    address: String, 
+    category: String, 
     coordinates:[Number],
     description: String, 
     rating: Number,
+    tag: String
+    // tag : [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Tag'
+    //   }
+    // ]
     });
     
 const Place = mongoose.model("Place", placeSchema);

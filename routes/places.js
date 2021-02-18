@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const Place = require('../models/storagePlaces');
+//const Tag = require('../models/Tags.model')
 
 
 
 
 router.post('/addPlace', (req,res,next) => {
-  const {name, coordinates} = req.body; 
-  Place.create({ name, coordinates, user: req.session.user._id})
+  const {name, coordinates, address, category} = req.body; 
+  Place.create({ name, coordinates, address, category, user: req.session.user._id})
   .then(() => {
     res.redirect('/favoritesPlaces');
   })
@@ -92,10 +93,12 @@ router.post('/favoritesPlaces/:id/delete', (req, res,next) => {
 // POST edit 
 router.post('/favoritesPlaces/:id/edit', (req, res) => {
   const placeId = req.params.id;
-  const { description, rating } = req.body; 
+  const {description, rating, tag } = req.body; 
   Place.findByIdAndUpdate(placeId, {
     description: description,
+    tag: tag,
     rating: rating
+    
   })
     .then(place => {
       console.log(place)
@@ -106,6 +109,15 @@ router.post('/favoritesPlaces/:id/edit', (req, res) => {
       console.log(err);
     })
 })
+
+//find a method to edit the tag with category-string and color string to then 
+//in the mapbox.Js create a query that when we save the edit will 
+//upload the color of the tag
+
+
+
+//function to get the tag category and color to update the marker 
+
 
 
 module.exports = router;

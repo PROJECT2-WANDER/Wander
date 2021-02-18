@@ -13,12 +13,6 @@ const placeSchema = new Schema({
     description: String, 
     rating: Number,
     tag: String
-    // tag : [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Tag'
-    //   }
-    // ]
     });
     
 const Place = mongoose.model("Place", placeSchema);

@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
 });
 
 const nav = new mapboxgl.NavigationControl(); 
-map.addControl(nav, 'top-left'); 
+map.addControl(nav, 'top-right'); 
 
 // Marker
 var marker = new mapboxgl.Marker() // initialize a new marker
@@ -83,6 +83,11 @@ map.on('load', function() {
 
       .catch(err => console.log(err))
     }
+
+    // //Update the marker 
+    // document.querySelector('#saveTag').onclick = function (){
+
+    // }
 
 
   });

@@ -24,7 +24,7 @@
 }
 
 .search-bar {
-  background-color: red;
+  background: #8eb2c4;
   justify-content: space-between;
   text-align: center;
 }
@@ -36,8 +36,6 @@
 
 /*# sourceMappingURL=style.css.map */
 
-
-/* Nav */ 
 
 /* nav*/ 
 
@@ -59,6 +57,7 @@
 }
 
 
+
 #check:checked ~ .sidebar .sidebar{
   left: 0;
 }
@@ -67,7 +66,7 @@
 .sidebar header {
   font-size: 22px;
   color: white;
-  line-height: 100px;
+  line-height: 70px;
   text-align: center;
   background: #8eb2c4;
   user-select: none;
@@ -150,28 +149,31 @@ label #cancel{
 
 
 .profile-card{
-  width: 400px;
+  width: 400px; 
   text-align: center;
-  border-radius: 0px 0px 10px 0px;
- overflow: hidden; 
- height:89%;
+  border-radius: 0px 0px 0px 0px;
+  overflow: hidden; 
+  background-color: blueviolet;
 }
 
 
 .card-header{
   background: #2c3a47;
-  padding: 40px 40px;
-  height:89%;
+  height:430px;
+  padding: 20px;
+  
 }
 
 .pic{
+
   display: inline-block;
   padding: 8px;
   background: linear-gradient(130deg, #74b9ff, #e66767);
   margin: auto;
   border-radius: 50%;
-  background-size: 200% 200%;
-  animation: animated-gradient 2s linear infinite;
+  /*background-size: 200% 200%;*/
+  /*animation: animated-gradient 2s linear infinite;*/
+
 }
 
 
@@ -228,7 +230,9 @@ label #cancel{
 
 .card-footer{
   background: #f4f4f4;
-  padding: 60px 10px;
+  padding: 20px 10px;
+  top: 30px;
+  border-radius: 0px 0px 30px 0px;
 }
 
 .numbers{

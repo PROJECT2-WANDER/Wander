@@ -54,6 +54,7 @@ router.get('/api/favoritesPlaces', (req,res,next) => {
 //To  change the marker when we create a tag 
 //router.get('/api/favoritesPlaces', (req,res,next))
 
+//To filter the places on the home page 
 router.post('/favoritesPlaces/filter', (req,res,next) => {
   console.log(typeof req.body.tag, "FILTER HERE")
   Place.find().then((placesFromDB) => {

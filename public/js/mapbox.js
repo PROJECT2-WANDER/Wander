@@ -105,6 +105,16 @@ function showMarkers(){
   places.forEach(place => {
     if (place.tag === 'Food') {
       color = 'blue'
+    } else if (place.tag === 'Bar'){
+      color = 'yellow'
+    } else if (place.tag === 'Park'){
+      color = 'green'
+    } else if (place.tag === 'Sport'){
+      color = 'azure'
+    } else if (place.tag === 'Culture'){
+      color = 'aquamarine'
+    } else if (place.tag === 'Club'){
+      color = 'DarkSlateBlue'
     }
     new mapboxgl.Marker({
       scale: 1,

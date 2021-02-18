@@ -7,10 +7,22 @@
 <p>{{place.rating}}</p>
 
 
+ <a href="/favoritesPlaces" >
+  <button id="saveLocation" >Save location</button></a>
+
+
 <a href="/favoritesPlaces/{{place._id}}/edit">Edit this place</a>
+
 
 <form action="/favoritesPlaces/{{place._id }}/delete" method="POST">
 <button type="submit">Delete</button> </form>
 
 
+ 
+
+ <!-- <div id='map'>
+  </div> -->
+
+
 <a href="/favoritesPlaces">Go to back to the list</a>
+

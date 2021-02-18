@@ -9,12 +9,12 @@
     </label> 
 <!-- sidebar-->
     <div class="sidebar">
-    <header>Save your Place      
+    <header>Search a new place      
     </header>
         <div class ="search-bar ">
              <div id="geocoder" class="geocoder"></div>
           <a href="/favoritesPlaces" >
-          <button id="saveLocation" >Save location</button></a>
+          <button class="buttonUser" id="saveLocation" >Save location</button></a>
            </div>      
     <div class="profile-card">
       <div class="card-scrollbar">
@@ -24,7 +24,7 @@
 </form> 
 {{/each}}
 <form action="/favoritesPlaces/filter" class = "form" method="POST">
-<label for="tag">Filter form:</label>
+<label for="tag"></label>
   <select name="tag" id="tag">
     <option selected> Choose...</option>
     <option value="Food">Food</option>

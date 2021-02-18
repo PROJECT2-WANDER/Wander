@@ -2,9 +2,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib21nbiIsImEiOiJja2w1Z2FkMGoxa3phMm5vNG5sY2Zmb
 
 const map = new mapboxgl.Map({
   container: 'map', // container ID
-  style: 'mapbox://styles/omgn/cklb7cjs92m5f17sa4amx97w5', // style URL
+  style: 'mapbox://styles/omgn/cklbf24ba0c9i17t551ed3mgb', // style URL
   center: [13.405, 52.52], // starting position [lng, lat]
-  zoom: 9 // starting zoom
+  zoom: 12 // starting zoom
 });
 
 const nav = new mapboxgl.NavigationControl(); 
@@ -75,10 +75,11 @@ map.on('load', function() {
     const category = e.result.properties.category; 
     document.querySelector('#saveLocation').onclick = function (){
       console.log(long, lat) 
-      axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: name, address: address, category: category} )
+      //axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: name, address: address, category: category} )
+      axios.post('https://wander-2.herokuapp.com/addPlace', {coordinates: [long, lat], name: name, address: address, category: category} )
       .then(response => {
         showMarkers(); 
-        window.location.reload();
+        showPopUp(); 
       })
 
       .catch(err => console.log(err))
@@ -98,23 +99,26 @@ map.on('load', function() {
 
 function showMarkers(){
   console.log('SHOW MARKERS'); 
-  axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
+  // axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
+    axios.get('https://wander-2.herokuapp.com/api/favoritesPlaces').then(response =>{
   const places = response.data.data; 
   let color = 'red'; 
   console.log(places); 
   places.forEach(place => {
     if (place.tag === 'Food') {
-      color = 'blue'
+      color = 'lightskyblue'
     } else if (place.tag === 'Bar'){
-      color = 'yellow'
+      color = 'hotpink'
     } else if (place.tag === 'Park'){
-      color = 'green'
-    } else if (place.tag === 'Sport'){
+      color = 'aquamarine'
+    } else if (place.tag === 'Sports'){
       color = 'azure'
     } else if (place.tag === 'Culture'){
-      color = 'aquamarine'
+      color = 'peachpuff'
     } else if (place.tag === 'Club'){
       color = 'DarkSlateBlue'
+    } else {
+      color = 'amarine'
     }
     new mapboxgl.Marker({
       scale: 1,
@@ -125,11 +129,40 @@ function showMarkers(){
       .on('dragend', (data) => {
           console.log(data);
       })
+
   })
 })
 }
 
 showMarkers(); 
+
+function showPopUp(){
+  // axios.get('http://localhost:3000/api/favoritesPlaces').then(response => {
+    axios.get('https://wander-2.herokuapp.com/api/favoritesPlaces').then(response => {
+    
+    const places = response.data.data; 
+    places.forEach(place => {
+      new mapboxgl.Popup({
+        closeButton: true
+      }) 
+               .setLngLat(place.coordinates)
+               .setHTML(place.name)
+               .setMaxWidth('200px')
+               .addTo(map);
+    })
+  })
+}
+
+showPopUp(); 
+
+
+
+
+
+// color: #00b7ff;
+//  background: #122933;
+//   background: #8eb2c4;
+
 
 
 // function showPopUp (){

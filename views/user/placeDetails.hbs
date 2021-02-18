@@ -16,7 +16,7 @@
         <div class ="search-bar ">
              <div id="geocoder" class="geocoder"></div>
           <a href="/favoritesPlaces" >
-          <button id="saveLocation" >Save location</button></a>
+          <button class="buttonUser" id="saveLocation" >Save location</button></a>
            </div>
     <!--body of sidebar -->
     <div class="profile-card">
@@ -31,10 +31,10 @@
 
 
  <a href="/favoritesPlaces" >
-<a href="/favoritesPlaces/{{place._id}}/edit">Edit this place</a>
+<a class="buttonUser" href="/favoritesPlaces/{{place._id}}/edit">Edit this place</a>
 
 <form  action="/favoritesPlaces/{{place._id }}/delete" method="POST">
-<button type="submit">Delete</button> </form>
+<button class="buttonUser" type="submit">Delete</button> </form>
   <a href="/" class=> back</a>
   </div>
 </div> <!--end of card header-->

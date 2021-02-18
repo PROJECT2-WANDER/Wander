@@ -1,11 +1,13 @@
 <section class="flexbox nav ">
    <h2 class="logo">Wander</h2>
  <section class="flexbox ">
-    <input type="checkbox" id="check">
+<input type="checkbox" id="check" checked>
+<!--checkbox-->
     <label for="check">
-      <i class="fa fa-bars" aria-hidden="true" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
+      <i class="fa fa-bars" aria-hidden="hidden" id="cancel"></i>
+      <i class="fas fa-times" id="btn"></i>
+    </label> 
+<!-- sidebar-->
     <div class="sidebar">
     <header>Save your Place      
     </header>
@@ -13,7 +15,7 @@
              <div id="geocoder" class="geocoder"></div>
           <a href="/favoritesPlaces" >
           <button id="saveLocation" >Save location</button></a>
-           </div>
+           </div>      
     <div class="profile-card">
       <div class="card-scrollbar">
         <div class="name"> your list </div>
@@ -21,7 +23,7 @@
 <a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
 </form> 
 {{/each}}
-<form action="/favoritesPlaces/filter" method="POST">
+<form action="/favoritesPlaces/filter" class = "form" method="POST">
 <label for="tag">Filter form:</label>
   <select name="tag" id="tag">
     <option selected> Choose...</option>
@@ -34,14 +36,31 @@
   </select>
   <button type="submit">Filter</button>
 </form>
- </div>
-      <div class="card-footer">
-        <div class="numbers">     
-          <div class="border"></div>  
+</div>
+<div class="card-footer">
+        <div class="numbers">
+          <div class="item">
+              <a href="/homepage" class=> Home</a> 
+          </div>
           <div class="border"></div>
-  <a href="/" class=> go back</a>
+          <div class="item">
+               <a href="/favoritesPlaces" class=> Show List</a>
+          </div>
+          <div class="border"></div>
+          <div class="item">
+               <a href="/logout" class=> Logout</a>
           </div>
         </div>
-     </div> 
+      </div>
    </section>
      </section>
+
+
+
+
+
+
+
+
+
+

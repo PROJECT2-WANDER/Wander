@@ -33,21 +33,26 @@
  <a href="/favoritesPlaces" >
 <a href="/favoritesPlaces/{{place._id}}/edit">Edit this place</a>
 
-<form action="/favoritesPlaces/{{place._id }}/delete" method="POST">
+<form  action="/favoritesPlaces/{{place._id }}/delete" method="POST">
 <button type="submit">Delete</button> </form>
   <a href="/" class=> back</a>
   </div>
 </div> <!--end of card header-->
- <div class="card-footer">
-        <div class="numbers">     
-          <div class="border"></div>  
+<div class="card-footer">
+        <div class="numbers">
+          <div class="item">
+              <a href="/homepage" class=> Home</a> 
+          </div>
           <div class="border"></div>
-  <a href="/" class=> Profile</a>
- <div class="border"></div>  
-  <div class="border"></div>
-  <a href="/" class=>back</a>
+          <div class="item">
+               <a href="/favoritesPlaces" class=> Show List</a>
+          </div>
+          <div class="border"></div>
+          <div class="item">
+               <a href="/logout" class=> Logout</a>
           </div>
         </div>
+      </div>
  </section>
  </section>
   

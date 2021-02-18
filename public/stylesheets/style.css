@@ -94,10 +94,6 @@ ul li:hover a{
 }
 
 
-#check{
-  display:none;
-}
-
 
 label #btn,label #cancel{
   position: absolute;
@@ -126,8 +122,40 @@ label #cancel{
   transition: all .5s ease;
 }
 
+#check{
+   display:none;
+}
 
+/* Ohne checked ist content weg buttons da */ 
 #check:checked ~ .sidebar{
+  left: 0; 
+}
+
+
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* X  ist dann weg wenn*/ 
+#check:checked ~ label #cancel{
+  left: 350px;
+}
+
+
+#check:checked ~ section{
+  margin-left: 250px;
+}
+
+
+
+
+
+
+
+/*#check:checked ~ .sidebar{
   left: 0;
 }
 
@@ -144,7 +172,10 @@ label #cancel{
 }
 #check:checked ~ section{
   margin-left: 250px;
-}
+}*/
+
+
+
 
 
 
@@ -153,7 +184,7 @@ label #cancel{
   text-align: center;
   border-radius: 0px 0px 0px 0px;
   overflow: hidden; 
-  background-color: blueviolet;
+  /* background-color: blueviolet;*/
 }
 
 
@@ -280,3 +311,19 @@ label #cancel{
   background: #bbb;
 }
 
+/* form 
+
+.form .form-control {
+margin: 30px 0;
+}
+
+.form input[type='description'],
+.form input[type='number"'] {
+ border: 0;
+ border-bottom:1px solid #b4becb6e;
+ width: 100%;
+ padding: 3px;
+ font-size:16px;
+ 
+}
+*/ 

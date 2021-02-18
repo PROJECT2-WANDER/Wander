@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
 });
 
 const nav = new mapboxgl.NavigationControl(); 
-map.addControl(nav, 'top-left'); 
+map.addControl(nav, 'top-right'); 
 
 // Marker
 var marker = new mapboxgl.Marker() // initialize a new marker
@@ -84,6 +84,11 @@ map.on('load', function() {
       .catch(err => console.log(err))
     }
 
+    // //Update the marker 
+    // document.querySelector('#saveTag').onclick = function (){
+
+    // }
+
 
   });
 });
@@ -92,13 +97,28 @@ map.on('load', function() {
 
 
 function showMarkers(){
+  console.log('SHOW MARKERS'); 
   axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
   const places = response.data.data; 
+  let color = 'red'; 
   console.log(places); 
   places.forEach(place => {
+    if (place.tag === 'Food') {
+      color = 'blue'
+    } else if (place.tag === 'Bar'){
+      color = 'yellow'
+    } else if (place.tag === 'Park'){
+      color = 'green'
+    } else if (place.tag === 'Sport'){
+      color = 'azure'
+    } else if (place.tag === 'Culture'){
+      color = 'aquamarine'
+    } else if (place.tag === 'Club'){
+      color = 'DarkSlateBlue'
+    }
     new mapboxgl.Marker({
       scale: 1,
-      color: 'red',
+      color: color,
   })
       .setLngLat(place.coordinates)
       .addTo(map)
@@ -112,8 +132,30 @@ function showMarkers(){
 showMarkers(); 
 
 
+// function showPopUp (){
+//   axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
+//   const places = response.data.data; 
+//   places.forEach(place => {
+//     new mapboxgl.Popup({
+//          closeButton: true
+//        });
+//       popup.setLngLat(place.coordinates)
+//          .setHTML('<h1>Hello World</h1>')
+//       //   .setMaxWidth('400px')
+//       //   .addTo(map)
+
+//   })
+
+// }
 //to uptade the markers with the tag
 //
+// const popup = new mapboxgl.Popup({
+//   closeButton: true
+// });
+// popup.setLngLat([13.405, 52.52])
+//   .setHTML('<h1>Hello World</h1>')
+//   .setMaxWidth('400px')
+//   .addTo(map)
 
 
 

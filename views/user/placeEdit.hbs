@@ -30,12 +30,22 @@
 <form action="/favoritesPlaces/{{_id}}/edit" method="POST">
   <label for="description">description: </label>
   <input type="description" name="description" id="description" value="{{description}}">
+
   <label for="tag">Tag:</label>
-  <input type="tag" name="tag" id="tag" value="{{tag}}">
+  <select name="tag" id="tag">
+    <option selected> Choose...</option>
+    <option value="Food">Food</option>
+    <option value="Bar">Bar</option>
+    <option value="Park">Park</opption>
+    <option value="Sports">Sports</option>
+    <option value="Culture">Culture</option>
+    <option value="Club">Club, Party!!!</option>
+  </select>
+
   <label for="rating">Rating: </label>
   <input type="number" name="rating" id="rating" value="{{rating}}">
 
-  <button type="submit">Update the place</button>
+  <button id="saveTag" type="submit">Update the place</button>
 </form>
 {{/with}}
 

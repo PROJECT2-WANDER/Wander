@@ -34,7 +34,7 @@ router.get('/favoritesPlaces', (req,res,next) => {
   })
 })
 
-
+//To add the marker when we create a new place 
 router.get('/api/favoritesPlaces', (req,res,next) => {
   console.log("USER PLEASE BE HERE",req.session.user._id)
   Place.find({ user: req.session.user._id}).then(places => {
@@ -47,6 +47,27 @@ router.get('/api/favoritesPlaces', (req,res,next) => {
   })
   .catch(err => {
     next(err);
+  })
+})
+
+
+//To  change the marker when we create a tag 
+//router.get('/api/favoritesPlaces', (req,res,next))
+
+//To filter the places on the home page 
+router.post('/favoritesPlaces/filter', (req,res,next) => {
+  console.log(typeof req.body.tag, "FILTER HERE")
+  Place.find().then((placesFromDB) => {
+    console.log(placesFromDB)
+    let filter = []; 
+    placesFromDB.forEach(place => {
+    console.log(typeof place.tag, 'CONSOLE LOG PLACE.TAG')
+      if (place.tag === req.body.tag) {
+        filter.push(place)
+      }
+    })
+    res.render("user/placeList.hbs", {places : filter})
+    console.log(filter, "FILTER ARRAY HERE")
   })
 })
 
@@ -90,7 +111,7 @@ router.post('/favoritesPlaces/:id/delete', (req, res,next) => {
     })
 })
 
-// POST edit 
+// POST edit // Take this route for the edit query marker
 router.post('/favoritesPlaces/:id/edit', (req, res) => {
   const placeId = req.params.id;
   const {description, rating, tag } = req.body; 

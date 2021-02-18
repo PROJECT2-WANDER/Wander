@@ -12,6 +12,13 @@ const placeSchema = new Schema({
     coordinates:[Number],
     description: String, 
     rating: Number,
+    tag: String
+    // tag : [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Tag'
+    //   }
+    // ]
     });
     
 const Place = mongoose.model("Place", placeSchema);

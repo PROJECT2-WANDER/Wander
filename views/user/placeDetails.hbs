@@ -3,6 +3,7 @@
 <p>{{place.address}}</p>
 <p>{{place.category}}</p>
 <p>{{place.description}}</p>
+<p>{{place.tag}}</p>
 <p>{{place.rating}}</p>
 
 
@@ -11,6 +12,5 @@
 <form action="/favoritesPlaces/{{place._id }}/delete" method="POST">
 <button type="submit">Delete</button> </form>
 
- {{!-- <form action="/favoritesPlaces/{{ this._id }}/delete" method="POST">
-  <button type="submit">Delete</button>
-  </form>  --}}
+
+<a href="/favoritesPlaces">Go to back to the list</a>

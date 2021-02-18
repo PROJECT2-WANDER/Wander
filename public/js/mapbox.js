@@ -85,6 +85,7 @@ map.on('load', function() {
 function showMarkers(){
   axios.get('http://localhost:3000/api/favoritesPlaces').then(response =>{
   const places = response.data.data; 
+  console.log(places); 
   places.forEach(place => {
     new mapboxgl.Marker({
       scale: 1,
@@ -101,21 +102,9 @@ function showMarkers(){
 
 showMarkers(); 
 
-//let coords = {coordinates: [long, lat]}; 
 
-// coords.forEach(coord => {
-//   new mapboxgl.Marker({
-//       scale: 1,
-//       color: 'red',
-//       draggable: true
-//   })
-//       .setLngLat(coord)
-//       .addTo(map)
-//       .on('dragend', (data) => {
-//           console.log(data);
-//       })
-// })
-
+//to uptade the markers with the tag
+//
 
 
 

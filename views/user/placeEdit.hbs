@@ -1,4 +1,33 @@
-<h1>Edit this place</h1>
+
+<!--nav --> 
+<section class="flexbox nav ">
+<a href="/logout">Logout</a>
+<a href="/" class=> back to landingpage</a>
+<h2 class="logo">Wander</h2>
+
+ <!--sidebar Place Details --> 
+
+ <section class="flexbox ">
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fa fa-bars" aria-hidden="true" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+
+    <div class="sidebar">
+    <header class ="header-name"> Place Details</header>
+    <!--search-bar-->
+        <div class ="search-bar ">
+             <div id="geocoder" class="geocoder"></div>
+          <a href="/favoritesPlaces" >
+          <button id="saveLocation" >Save location</button></a>
+           </div>
+    <!--body of sidebar -->
+    <div class="profile-card">
+      <div class="card-header flexbox column"> 
+      <div class = 'favorite-place-list flexbox column '> 
+
+        <h1>Edit this place</h1>
 <div>{{place.name}}</div>
 {{#with place}}
 <form action="/favoritesPlaces/{{_id}}/edit" method="POST">
@@ -15,4 +44,8 @@
 
 <button type="submit">Delete</button>
 
+
+</div> <!--end of card header-->
+ </section>
+ </section>
 

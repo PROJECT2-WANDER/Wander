@@ -21,8 +21,17 @@ color: #00b7ff; }
 h1 {
 font-size: 1rem; }
 
+/* for nav*/ 
+.flexbox { 
+  display: flex;
+  justify-content: right;
+  /*align-items: center; */
+}
 
-
+/* for sidebar*/ 
+.column { 
+  flex-direction: column;
+}
 
 .text {
   position:relative;
@@ -65,4 +74,13 @@ font-size: 1rem; }
 
 .text a:hover {
   letter-spacing: 6px;
+}
+
+
+.header-name {
+  color: #f2f2f2;
+  font-size: 28px;
+  font-weight: 600;
+ 
+
 }

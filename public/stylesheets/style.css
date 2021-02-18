@@ -11,6 +11,21 @@
    /*z-index: -1; */
  }
 
+
+ .geocoder {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  top: 1rem;
+}
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
+
+
+
 /*# sourceMappingURL=style.css.map */
 
 
@@ -26,7 +41,7 @@
 .nav {
   align-items: center; 
   margin-right:2rem;
- /* background: #8eb2c4;*/
+ background: #8eb2c4;
 }
 
 

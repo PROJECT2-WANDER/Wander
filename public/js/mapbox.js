@@ -24,7 +24,15 @@ var marker = new mapboxgl.Marker() // initialize a new marker
   });
   
   // Add the geocoder to the map
-  map.addControl(geocoder);
+  /*map.addControl(geocoder); */
+  
+var geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  mapboxgl: mapboxgl
+});
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
  
 
   
@@ -112,7 +120,6 @@ showMarkers();
 //           console.log(data);
 //       })
 // })
-
 
 
 

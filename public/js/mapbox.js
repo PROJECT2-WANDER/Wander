@@ -78,6 +78,7 @@ map.on('load', function() {
       axios.post('http://localhost:3000/addPlace', {coordinates: [long, lat], name: name, address: address, category: category} )
       .then(response => {
         showMarkers(); 
+        window.location.reload();
       })
 
       .catch(err => console.log(err))

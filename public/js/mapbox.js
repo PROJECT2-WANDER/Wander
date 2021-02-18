@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
 });
 
 const nav = new mapboxgl.NavigationControl(); 
-map.addControl(nav, 'top-right'); 
+map.addControl(nav, 'bottom-right'); 
 
 // Marker
 var marker = new mapboxgl.Marker() // initialize a new marker

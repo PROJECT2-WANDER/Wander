@@ -1,4 +1,3 @@
-
 <!--nav --> 
 <section class="flexbox nav ">
 <h2 class="logo">Wander</h2>
@@ -29,8 +28,8 @@
 {{#with place}}
 <form action="/favoritesPlaces/{{_id}}/edit" method="POST">
   <label for="description">description: </label>
-  <input type="description" name="description" id="description" value="{{description}}">
-
+  <input  type="description" name="description" id="description" value="{{description}}">
+ 
   <label for="tag">Tag:</label>
   <select name="tag" id="tag">
     <option selected> Choose...</option>
@@ -43,7 +42,7 @@
   </select>
 
   <label for="rating">Rating: </label>
-  <input type="number" name="rating" id="rating" value="{{rating}}">
+  <input  type="number" name="rating" id="rating" value="{{rating}}">
 
   <button id="saveTag" type="submit">Update the place</button>
 </form>
@@ -53,13 +52,22 @@
 
 </div> <!--end of card header-->
 </div>
-      <div class="card-footer">
-        <div class="numbers">     
-          <div class="border"></div>  
+
+<div class="card-footer">
+        <div class="numbers">
+          <div class="item">
+              <a href="/homepage" class=> Home</a> 
+          </div>
           <div class="border"></div>
-  <a href="/" class=> go back</a>
+          <div class="item">
+               <a href="/favoritesPlaces" class=> Show List</a>
+          </div>
+          <div class="border"></div>
+          <div class="item">
+               <a href="/logout" class=> Logout</a>
           </div>
         </div>
+      </div>
       </div>
     </div>
  </section>

@@ -2,12 +2,24 @@
 {{#each places}}
 <a href="/favoritesPlaces/{{this._id}}"><h1>{{name}}</h1></a>
 <p>{{address}}</p>
-{{!-- <form action="/favoritesPlaces/{{ this._id }}/delete" method="POST">
-<button type="submit">Delete</button> --}}
+
 </form> 
 {{/each}}
 
-
+<form action="/favoritesPlaces/filter" method="POST">
+<label for="tag">Filter form:</label>
+  <select name="tag" id="tag">
+    <option selected> Choose...</option>
+    <option value="Food">Food</option>
+    <option value="Bar">Bar</option>
+    <option value="Park">Park</opption>
+    <option value="Sports">Sports</option>
+    <option value="Culture">Culture</option>
+    <option value="Club">Club, Party!!!</option>
+  </select>
+  <button type="submit">Filter</button>
+</form>
+<a href="/favoritesPlaces">No filter </a>>
 <button id="saveLocation">Save location</button>
 
 <div id='map'>

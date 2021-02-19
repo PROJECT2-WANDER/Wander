@@ -77,3 +77,17 @@ font-size: 1rem; }
 .logout { 
   margin-top:0.3rem;
 }
+
+
+.buttonUser {
+  display:inline-block;
+  font-size: 0.8em;
+  background:white;
+  padding: 8px 25px;
+  text-decoration: none;
+  color:#111;
+  margin-top:10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}

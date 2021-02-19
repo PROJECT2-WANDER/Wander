@@ -23,11 +23,6 @@
   /*top: 1rem;*/
 }
 
-.search-bar {
-  background: #8eb2c4;
-  justify-content: space-between;
-  text-align: center;
-}
 
 .mapboxgl-ctrl-geocoder {
   min-width: 100%;
@@ -63,15 +58,6 @@
 }
 
 
-.sidebar header {
-  font-size: 22px;
-  color: white;
-  line-height: 70px;
-  text-align: center;
-  background: #8eb2c4;
-  user-select: none;
-}
-
 .sidebar ul a{
   display: block;
   height: 100%;
@@ -93,11 +79,11 @@ ul li:hover a{
   margin-right: 17px;
 }
 
-
+/* checkbox*/
 
 label #btn,label #cancel{
   position: absolute;
-  background: #122933;
+  background:#8eb2c4;
   border-radius: 3px;
   cursor: pointer;
 }
@@ -151,34 +137,6 @@ label #cancel{
 
 
 
-
-
-
-
-/*#check:checked ~ .sidebar{
-  left: 0;
-}
-
-
-#check:checked ~ label #btn{
-  left: 250px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-#check:checked ~ label #cancel{
-  left: 350px;
-}
-#check:checked ~ section{
-  margin-left: 250px;
-}*/
-
-
-
-
-
-
 .profile-card{
   width: 400px; 
   text-align: center;
@@ -189,10 +147,36 @@ label #cancel{
 
 
 .card-header{
+ /* background: #2c3a47;*/
   background: #2c3a47;
   height:430px;
   padding: 20px;
   
+}
+
+
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background:#8eb2c4;
+  user-select: none;
+}
+
+.search-bar {
+  /*background: #8eb2c4;*/
+  background:#8eb2c4;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card-footer{
+  /*background: #f4f4f4;*/
+  background: #f4f4f4;;
+  padding: 20px 10px;
+  top: 30px;
+  border-radius: 0px 0px 30px 0px;
 }
 
 .card-scrollbar {
@@ -245,7 +229,7 @@ label #cancel{
 
 .desc{
   font-size: 18px;
-  color: #e66767;
+  color: #03a9f4;
 }
 
 .sm{
@@ -262,14 +246,14 @@ label #cancel{
 }
 
 .sm a:hover{
-  color: #e66767;
+  color: #03a9f4;
 }
 
 .contact-btn{
   display: inline-block;
   padding: 12px 50px;
-  color: #e66767;
-  border: 2px solid #e66767;
+  color: #8eb2c4;
+  border: 2px solid #8eb2c4;
   border-radius: 6px;
   margin-top: 16px;
   transition: .3s linear;
@@ -277,15 +261,11 @@ label #cancel{
 
 .contact-btn:hover{
   background: #e66767;
-  color: #f2f2f2;
+  /*color: #f2f2f2;*/ 
+  background: #e66767;
 }
 
-.card-footer{
-  background: #f4f4f4;
-  padding: 20px 10px;
-  top: 30px;
-  border-radius: 0px 0px 30px 0px;
-}
+
 
 .numbers{
   display: flex;
@@ -327,3 +307,19 @@ margin: 30px 0;
  
 }
 */ 
+
+
+.buttonUser {
+  display:inline-block;
+  font-size: 0.8em;
+  background:white;
+  padding: 8px 10px;
+  text-decoration: none;
+  color:#111;
+  margin-top:10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  margin-bottom:0.5rem;
+}
+
